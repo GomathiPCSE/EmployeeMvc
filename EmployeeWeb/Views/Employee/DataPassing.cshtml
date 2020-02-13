@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Employee.Entity.EmployeeEntity>
+
+@{
+    ViewBag.Title = "";
+}
+    <table>
+ <tr>
+     <td>ViewData</td></tr>
+        @foreach (Employee.Entity.EmployeeEntity result in (List<Employee.Entity.EmployeeEntity>)ViewData["employee"])
+        {
+            <tr>
+                <td>
+                    @result.EmployeeId
+                </td>
+                <td>
+                    @result.EmployeeName
+                </td>
+                <td>
+                    @result.Salary
+                </td>
+                <td>
+                    @result.City
+                </td>
+           </tr>
+  
+        }
+    </table>
+    <table>
+        <tr>
+            <td>
+                TempData
+            </td>
+        </tr>
+
+        @foreach (Employee.Entity.EmployeeEntity result in (List<Employee.Entity.EmployeeEntity>)TempData["employee"])
+        {
+            <tr>
+                <td>
+                    @result.EmployeeId
+                </td>
+                <td>
+                    @result.EmployeeName
+                </td>
+                <td>
+                    @result.Salary
+                </td>
+                <td>
+                    @result.City
+                </td>
+            </tr>        
+        }
+    </table>
+    <table>
+        <tr>
+            <td>
+                ViewBag
+            </td>
+        </tr>
+        @foreach (Employee.Entity.EmployeeEntity result in ViewBag.employee)
+        {
+            <tr>
+                <td>
+                    @result.EmployeeId
+                </td>
+                <td>
+                    @result.EmployeeName
+                </td>
+                <td>
+                    @result.Salary
+                </td>
+                <td>
+                    @result.City
+                </td>
+            </tr>   
+        }
+    </table>
+

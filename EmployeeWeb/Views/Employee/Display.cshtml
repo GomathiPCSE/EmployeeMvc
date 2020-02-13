@@ -1,0 +1,35 @@
+﻿@model Employee.DAL.EmployeeRepository
+
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Display</h2>
+<table>
+    <tr>
+        <td>
+            TempData
+        </td>
+    </tr>
+
+    @foreach (Employee.Entity.EmployeeEntity result in (List<Employee.Entity.EmployeeEntity>)TempData["employee"])
+    {
+        <tr>
+            <td>
+                @result.EmployeeId
+            </td>
+            <td>
+                @result.EmployeeName
+            </td>
+            <td>
+                @result.Salary
+            </td>
+            <td>
+                @result.City
+            </td>
+        </tr>
+
+    }
+</table>
+
+
