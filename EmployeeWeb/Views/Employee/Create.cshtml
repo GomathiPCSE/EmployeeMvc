@@ -1,0 +1,54 @@
+﻿@model Employee.Entity.EmployeeEntity
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add Employee Details</h2>
+<br/>
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post))
+{ <table cellpadding="10">
+    <tr>
+        <td>
+            @Html.Label("Employee Id");
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.EmployeeId)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.Label("Employee Name");
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.EmployeeName)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.Label("Salary")
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.Salary)
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            @Html.Label("City")
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.City)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Back","DataPassing")
+        </td>
+        <td>
+            <input type="submit" id="submit" />
+        </td>
+    </tr>
+</table>
+}
+

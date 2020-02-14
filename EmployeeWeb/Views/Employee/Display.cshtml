@@ -4,14 +4,10 @@
     ViewBag.Title = "Display";
 }
 
-<h2>Display</h2>
+<h2>Employee Details</h2>
+@Html.ActionLink("Add Employee Details","Create")<br/><br/>
 <table>
-    <tr>
-        <td>
-            TempData
-        </td>
-    </tr>
-
+ 
     @foreach (Employee.Entity.EmployeeEntity result in (List<Employee.Entity.EmployeeEntity>)TempData["employee"])
     {
         <tr>
@@ -26,6 +22,10 @@
             </td>
             <td>
                 @result.City
+            </td>
+            <td>
+                @Html.ActionLink("Edit","Edit",new { id=result.EmployeeId})|
+                @Html.ActionLink("Delete", "Delete", new { id=result.EmployeeId})
             </td>
         </tr>
 

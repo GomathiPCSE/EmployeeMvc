@@ -16,5 +16,26 @@ namespace Employee.DAL
         {
             return employeeList;
         }
+        public static void Add(EmployeeEntity employee)
+        {
+            employeeList.Add(employee);
+        }
+        public static void Delete(int employeeId)
+        {
+            EmployeeEntity employee = GetEmployeeById(employeeId);
+            if (employee != null)
+                employeeList.Remove(employee);
+        }
+        public static void Update(EmployeeEntity employee)
+        {
+            EmployeeEntity employeeEntity = employeeList.Find(id => id.EmployeeId == employee.EmployeeId);
+            employeeEntity.EmployeeName = employee.EmployeeName;
+            employeeEntity.Salary = employee.Salary;
+            employeeEntity.City = employee.City;
+        }
+        public static EmployeeEntity GetEmployeeById(int employeeId)
+        {
+            return employeeList.Find(id => id.EmployeeId == employeeId);
+        }
     }
 }
