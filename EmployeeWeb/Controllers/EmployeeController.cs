@@ -32,8 +32,11 @@ namespace EmployeeWeb.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(EmployeeEntity employee)
+        public ActionResult CreatePost()
         {
+            EmployeeEntity employee = new EmployeeEntity();
+            //TryUpdateModel(employee);
+            UpdateModel(employee);
             EmployeeRepository.Add(employee);
             TempData["Result"] = "Added Successfully";
             return RedirectToAction("DataPassing");
