@@ -7,7 +7,6 @@ namespace EmployeeWeb.Controllers
 {
     public class EmployeeController : Controller
     {
-        // GET: Employee
         public ActionResult Index()
         {
             IEnumerable<EmployeeEntity> employee = EmployeeRepository.GetDetails();
