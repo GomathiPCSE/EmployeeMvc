@@ -31,7 +31,6 @@ namespace EmployeeWeb.Controllers
         public ActionResult CreatePost()
         {
             EmployeeEntity employee = new EmployeeEntity();
-            //TryUpdateModel(employee);
             UpdateModel(employee);
             EmployeeRepository.Add(employee);
             TempData["Result"] = "Added Successfully";
