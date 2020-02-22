@@ -1,8 +1,6 @@
 ﻿using Employee.Entity;
 using Employee.DAL;
 using System.Collections.Generic;
-
-using System.Web;
 using System.Web.Mvc;
 
 namespace EmployeeWeb.Controllers
@@ -55,7 +53,7 @@ namespace EmployeeWeb.Controllers
             return RedirectToAction("DataPassing");
         }
         [HttpPost]
-        public ActionResult Update(EmployeeEntity employee)
+        public ActionResult Update([Bind(Include ="EmployeeId, EmployeeName, Salary")]EmployeeEntity employee)
         {
             EmployeeRepository.Update(employee);
             return RedirectToAction("DataPassing");
