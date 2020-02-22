@@ -2,7 +2,6 @@
 using Employee.DAL;
 using System.Collections.Generic;
 using System.Web.Mvc;
-
 namespace EmployeeWeb.Controllers
 {
     public class EmployeeController : Controller
